@@ -7,7 +7,7 @@ import { MessageCircle, MoreHorizontal, Share2, ThumbsUp } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import PostComments from '@/app/posts/PostComments';
-import { formatDate } from '@/lib/utils';
+import { formateDate } from '@/lib/utils';
 
 const PostsContent = ({post,isLiked,onShare,onComment,onLike}) => {
     const [showComments,setShowComments] = useState(false)
@@ -74,7 +74,7 @@ const PostsContent = ({post,isLiked,onShare,onComment,onLike}) => {
             </Avatar>
             <div >
                   <p className='font-semibold dark:text-white'>{post?.user?.username}</p>
-                  <p className='font-sm text-gray-500'>{formatDate(post?.createdAt)}</p>
+                  <p className='font-sm text-gray-500'>{formateDate(post?.createdAt)}</p>
             </div>
                 </div>
                 <Button variant="ghost" className="dark:hover:bg-gray-500">

@@ -56,7 +56,7 @@ export const deleteUserFromRequest = async(userId) =>{
 
 export const fetchUserProfile = async(userId) =>{
     try {
-         const response = await axiosInstance.post(`/users/profile/${userId}`)
+         const response = await axiosInstance.get(`/users/profile/${userId}`)
          return response?.data?.data;
     } catch (error) {
         console.log(error);
@@ -68,7 +68,7 @@ export const fetchUserProfile = async(userId) =>{
 
 export const getMutualFriends = async() =>{
     try {
-         const response = await axiosInstance.post('/users/mutual-friends')
+         const response = await axiosInstance.get('/users/mutual-friends')
          return response?.data?.data;
     } catch (error) {
         console.log(error);
