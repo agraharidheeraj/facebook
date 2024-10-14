@@ -30,6 +30,8 @@ const registerUser = async(req,res) =>{
 
         res.cookie("auth_token",accessToken,{
             httpOnly: true,
+            sameSite:"none",
+            secure:true
         })
 
 
@@ -64,6 +66,8 @@ const loginUser = async(req,res) =>{
 
         res.cookie("auth_token",accessToken,{
             httpOnly: true,
+            sameSite:"none",
+            secure:true
         })
 
 
@@ -82,7 +86,9 @@ const loginUser = async(req,res) =>{
 const logout = (req,res) =>{
     try {
         res.cookie("auth_token", "", {
-            httpOnly:true,
+            httpOnly: true,
+            sameSite:"none",
+            secure:true,
             expires: new Date(0)
         })
         return response(res,200,"User logged out successfully")
